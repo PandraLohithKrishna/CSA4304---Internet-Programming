@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleHub | Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Style<span>Hub</span></div>
+        <nav>
+            <a href="#" onclick="showProducts('All'); return false;">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#" onclick="showCart(); return false;">Cart (<span id="cartCount">0</span>)</a>
+            <a href="#" onclick="showOrders(); return false;">My Orders</a>
+            <a href="#" onclick="openAdmin(); return false;">Admin</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <p class="tagline">NEW SEASON • NEW STYLE</p>
+        <h1>Discover Your<br>Own Style</h1>
+        <p>Fashion for every moment, every mood, and everyone.</p>
+        <button onclick="showProducts('All')">Shop Now</button>
+    </section>
+
+    <main>
+        <section id="categories">
+            <h2>Shop by Category</h2>
+            <div class="category-list">
+                <button onclick="showProducts('All')">All Products</button>
+                <button onclick="showProducts('Men')">Men</button>
+                <button onclick="showProducts('Women')">Women</button>
+                <button onclick="showProducts('Kids')">Kids</button>
+                <button onclick="showProducts('Footwear')">Footwear</button>
+                <button onclick="showProducts('Accessories')">Accessories</button>
+            </div>
+        </section>
+
+        <section class="catalogue">
+            <h2>Our Collection</h2>
+            <div class="filters">
+                <input type="text" id="search" placeholder="Search fashion products..."
+                       oninput="displayProducts()">
+
+                <select id="categoryFilter" onchange="displayProducts()">
+                    <option value="All">All categories</option>
+                    <option value="Men">Men</option>
+                    <option value="Women">Women</option>
+                    <option value="Kids">Kids</option>
+                    <option value="Footwear">Footwear</option>
+                    <option value="Accessories">Accessories</option>
+                </select>
+
+                <select id="subcategoryFilter" onchange="displayProducts()">
+                    <option value="All">All subcategories</option>
+                </select>
+
+                <select id="sortBy" onchange="displayProducts()">
+                    <option value="default">Sort by</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+            </div>
+
+            <div id="productList" class="product-grid"></div>
+        </section>
+
+        <section id="content" class="content-panel">
+            <h2>Welcome to StyleHub</h2>
+            <p>Select a product to view details, or add your favourite items to the cart.</p>
+        </section>
+    </main>
+
+    <footer>
+        <h2>StyleHub</h2>
+        <p>Your style, your choice.</p>
+        <p>Internet Programming Lab – Experiment 10</p>
+        <p>Demo website. Payments and delivery are simulated.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
